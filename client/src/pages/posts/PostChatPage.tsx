@@ -28,6 +28,7 @@ export default function PostChatPage() {
 		}
 	}, [navigate, user]);
 
+	// states
 	const [messages, setMessages] = useState<IChatMessage[]>([]);
 	const [text, setText] = useState("");
 	const pollingRef = useRef<number | null>(null);
