@@ -8,12 +8,22 @@ import {Textarea} from "../../components/ui/textarea";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "../../components/ui/select";
 import {Alert, AlertDescription} from "../../components/ui/alert";
 import {Upload, X} from "lucide-react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {postsApi} from "../../api/postsApi";
 import {toast} from "sonner";
 import {Navbar} from "../../components/common/Navbar";
+import {useAuth} from "../../auth/useAuth";
 
 export default function CreatePostPage() {
+	const {user} = useAuth();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!user) {
+			navigate("/login");
+		}
+	}, [navigate, user]);
+
 	const [postType, setPostType] = useState<"lost" | "found" | "">("");
 	const [formData, setFormData] = useState({
 		title: "",

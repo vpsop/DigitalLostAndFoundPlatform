@@ -4,7 +4,7 @@ import {
 	createRoom,
 	getMessages,
 	getRoomByItem,
-} from "../controllers/ChatController";
+} from "../controllers/chatController";
 
 const router = Router();
 

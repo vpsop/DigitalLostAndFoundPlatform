@@ -27,12 +27,6 @@ export function Navbar() {
 					<Link to="/posts" className="text-muted-foreground hover:text-foreground transition-colors">
 						Posts
 					</Link>
-					<Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-						About
-					</Link>
-					<Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-						Contact
-					</Link>
 				</nav>
 				<div className="flex items-center gap-3">
 					{user == null ? (

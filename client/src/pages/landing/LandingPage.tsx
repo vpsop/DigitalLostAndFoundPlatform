@@ -27,20 +27,19 @@ export function LandingPage() {
 							The digital lost and found platform for NIT Calicut campus. Report lost items, help others
 							find their belongings, and strengthen our campus community.
 						</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<Link to="/posts/report-lost">
-								<Button size="lg" className="w-full sm:w-auto">
-									<MapPin className="w-4 h-4 mr-2" />
-									Report Lost Item
+						{user != null ? (
+							<Link to="/posts/create">
+								<Button size="lg" className="w-full sm:w-auto px-10 py-4">
+									Report an Item
 								</Button>
 							</Link>
-							<Link to="/posts/report-found">
-								<Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent">
-									<Search className="w-4 h-4 mr-2" />
-									Report Found Item
+						) : (
+							<Link to="/register">
+								<Button size="lg" className="w-full sm:w-auto px-10 py-4">
+									Create an Account
 								</Button>
 							</Link>
-						</div>
+						)}
 					</div>
 				</section>
 

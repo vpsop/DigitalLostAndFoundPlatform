@@ -43,7 +43,7 @@ export default function PostChatPage() {
 			try {
 				await chatApi.getMessages(postId);
 			} catch {
-				toast.error("Chat may not exist.");
+				// toast.error("Chat may not exist.");
 			}
 		});
 	};
@@ -54,7 +54,9 @@ export default function PostChatPage() {
 	 */
 	useEffect(() => {
 		if (!postId) return;
-		ensureRoom(postId);
+		setTimeout(() => {
+			ensureRoom(postId);
+		}, 2000);
 	}, [postId]);
 
 	const fetchMessages = async (postId: string) => {
