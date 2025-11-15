@@ -2,11 +2,6 @@ import { INotification } from "../models/Notification";
 import { Types } from "mongoose";
 
 
-export * from "./storage.interface";
-export * from "./storageFactory";
-export * from "./memoryStorage";
-export * from "./mongodbStorage";
-
 export interface INotificationService {
   createNotification(
     userId: Types.ObjectId,
